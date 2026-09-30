@@ -3,13 +3,15 @@
     "name": "Ashok Jha",
     "role": "Founder & CEO",
     "imageUrl": "images/team/ashok-jha.jpg",
+    "description": "Ashok Jha is the Founder and CEO of SSA Projects, providing strategic leadership and guiding the company’s overall vision, growth, and execution. His focus is on building strong teams, maintaining high standards, and delivering quality projects with long-term value.",
     "quote": "Leading with vision, building with purpose, and growing with the people who make it happen. I believe in strong teams, clear direction, and delivering work that speaks for itself.",
     "displayOrder": 1
   },
   {
     "name": "Subodh Jha",
     "role": "Operations Lead",
-    "imageUrl": "images/team/subodh-jha.jpg",
+    "imageUrl": "images/team/subodh Sir.png",
+    "description": "Subodh Jha oversees day-to-day operations and helps coordinate teams, resources, and project activities. His role focuses on maintaining smooth workflows, keeping teams aligned, and ensuring that operational plans are executed effectively.",
     "quote": "Keeping the operations moving, the teams aligned, and the work on track. I focus on turning plans into smooth execution while keeping the energy right.",
     "displayOrder": 2
   },
@@ -17,6 +19,7 @@
     "name": "Anand Jha",
     "role": "Tender Manager",
     "imageUrl": "images/team/anand-jha.jpg",
+    "description": "Anand Jha manages the tendering process, from reviewing opportunities and preparing proposals to coordinating the details required for successful submissions. His work combines careful planning, attention to detail, and commercial understanding.",
     "quote": "Turning opportunities into well-planned proposals. I handle the tendering process with attention to detail, strategic thinking, and a clear focus on winning the right work.",
     "displayOrder": 3
   },
@@ -24,6 +27,7 @@
     "name": "Vinod Sir",
     "role": "Finance Manager",
     "imageUrl": "images/team/vinod-sir.jpg",
+    "description": "Vinod Sir manages the company’s financial activities and supports effective financial planning and control. His responsibilities include maintaining financial discipline, monitoring accounts, and helping ensure that business decisions are supported by accurate financial information.",
     "quote": "Keeping the numbers clear, the finances organized, and the business moving in the right direction. Good decisions start with a strong financial foundation.",
     "displayOrder": 4
   },
@@ -31,6 +35,7 @@
     "name": "Bhuwan Sir",
     "role": "Accountant",
     "imageUrl": "images/team/bhuwan-sir.jpg",
+    "description": "Bhuwan Sir handles accounting activities and helps maintain accurate and organized financial records. His attention to detail supports the smooth functioning of the company’s financial and administrative operations.",
     "quote": "Keeping the accounts accurate, organized, and always up to date. Behind every smooth operation is someone making sure the numbers add up.",
     "displayOrder": 5
   },
@@ -38,6 +43,7 @@
     "name": "Bharosh Jha",
     "role": "Operations Lead",
     "imageUrl": "images/team/bharosh-jha.jpg",
+    "description": "Bharosh Jha works across operations to coordinate people, processes, and project requirements. His role focuses on maintaining consistency, improving coordination, and helping teams move efficiently toward project goals.",
     "quote": "Bringing people, processes, and projects together to keep things moving. I believe great operations are all about coordination, consistency, and getting things done.",
     "displayOrder": 6
   },
@@ -45,6 +51,7 @@
     "name": "Vijay Sir",
     "role": "Project Head",
     "imageUrl": "images/team/vijay-sir.jpg",
+    "description": "Vijay Sir oversees project activities from coordination through execution, working with teams to maintain progress, timelines, and quality. His focus is on keeping projects organized and ensuring that planned work moves efficiently toward completion.",
     "quote": "Turning plans into progress. I oversee projects from coordination to execution, keeping teams focused, timelines moving, and the final result on point.",
     "displayOrder": 7
   },
@@ -52,6 +59,7 @@
     "name": "Raj Mohan",
     "role": "Design Engineer",
     "imageUrl": "images/team/raj-mohan.jpg",
+    "description": "Calm in the process, focused on the outcome, and always ready to take on the next challenge. A practical mindset, smooth teamwork, and a problem-solving approach keep things moving without making the work feel complicated. Deadlines, coordination, and quality stay on track while keeping the atmosphere easy and positive. Because serious work doesn’t always need a serious mood — the best results come when the right attitude meets consistent effort. 🫰",
     "quote": "I design with purpose, coordinate with precision, and care about the details. Great work needs great energy — so I bring the ideas, the vibe, and the drive to get things done right. ✌️",
     "displayOrder": 8
   },
@@ -59,6 +67,7 @@
     "name": "Satyajit Rout",
     "role": "Business Analyst",
     "imageUrl": "images/team/satyajit-rout.jpg",
+    "description": "Satyajit Rout works with business information, project data, and analysis to support better decision-making. His role focuses on identifying insights, understanding business requirements, and helping the organization improve processes and performance.",
     "quote": "Turning information into insights and ideas into smarter decisions. I focus on understanding the bigger picture and finding better ways to move the business forward.",
     "displayOrder": 9
   }
