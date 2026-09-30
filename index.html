@@ -1,149 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SSA Projects — Admin</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#0d0d0d;color:#eee;font-family:Arial,Helvetica,sans-serif}
-.wrap{max-width:1150px;margin:auto;padding:30px 18px 70px}header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px;flex-wrap:wrap}
-h1{margin:0;color:#d6b36a;font-size:30px}.card{background:#181818;border:1px solid #303030;border-radius:14px;padding:22px;margin-bottom:18px}
-button{border:0;border-radius:8px;padding:12px 17px;font-weight:700;cursor:pointer;background:#d6b36a;color:#111;margin:6px 7px 6px 0}
-button.secondary{background:#444;color:#fff}button.danger{background:#9e3333;color:#fff}button.team{background:#6574cd;color:#fff}
-input,textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid #414141;background:#0d0d0d;color:#fff;margin-top:6px;margin-bottom:15px}
-textarea{min-height:120px;resize:vertical}label{display:block;color:#bbb;font-size:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}.hidden{display:none!important}.status{color:#d6b36a;min-height:22px;margin-top:10px}
-.note{color:#999;font-size:13px;line-height:1.6}.list{border:1px solid #333;border-radius:10px;padding:15px;margin-top:12px;background:#111}
-.item{padding:11px 0;border-bottom:1px solid #292929}.item:last-child{border-bottom:0}.meta{color:#999;font-size:13px;line-height:1.6}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab.active{background:#d6b36a;color:#111}.check{display:flex;align-items:center;gap:8px;margin:8px 0 15px}.check input{width:auto;margin:0}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SSA Projects — Admin</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: #0d0d0d;
+            color: #eee;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        .wrap {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 18px 70px
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap
+        }
+
+        h1 {
+            margin: 0;
+            color: #d6b36a;
+            font-size: 30px
+        }
+
+        .card {
+            background: #181818;
+            border: 1px solid #303030;
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 18px
+        }
+
+        button {
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 17px;
+            font-weight: 700;
+            cursor: pointer;
+            background: #d6b36a;
+            color: #111;
+            margin: 6px 7px 6px 0
+        }
+
+        button.secondary {
+            background: #444;
+            color: #fff
+        }
+
+        button.danger {
+            background: #9e3333;
+            color: #fff
+        }
+
+        button.team {
+            background: #6574cd;
+            color: #fff
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #414141;
+            background: #0d0d0d;
+            color: #fff;
+            margin-top: 6px;
+            margin-bottom: 15px
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        label {
+            display: block;
+            color: #bbb;
+            font-size: 14px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px
+        }
+
+        @media(max-width:700px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .status {
+            color: #d6b36a;
+            min-height: 22px;
+            margin-top: 10px
+        }
+
+        .note {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6
+        }
+
+        .list {
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 12px;
+            background: #111
+        }
+
+        .item {
+            padding: 11px 0;
+            border-bottom: 1px solid #292929
+        }
+
+        .item:last-child {
+            border-bottom: 0
+        }
+
+        .meta {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 18px
+        }
+
+        .tab.active {
+            background: #d6b36a;
+            color: #111
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0 15px
+        }
+
+        .check input {
+            width: auto;
+            margin: 0
+        }
+    </style>
 </head>
+
 <body>
-<div class="wrap">
-<header><h1>SSA PROJECTS — ADMIN</h1>
-<div><button onclick="show('projectAdd')">+ Add Project</button><button class="team" onclick="show('teamAdd')">+ Add Team Member</button></div></header>
+    <div class="wrap">
+        <header>
+            <h1>SSA PROJECTS — ADMIN</h1>
+            <div><button onclick="show('projectAdd')">+ Add Project</button><button class="team"
+                    onclick="show('teamAdd')">+ Add Team Member</button></div>
+        </header>
 
-<section class="card">
-<h2>GitHub Data Source</h2>
-<p class="note">This admin reads the latest project and team data from your public SSA-ADMIN GitHub repository. Changes are prepared as Gmail requests; this page does not expose a GitHub write token.</p>
-<div class="grid">
-<div><label>projects.json URL</label><input id="projectsUrl" placeholder="https://raw.githubusercontent.com/YOUR-USERNAME/SSA-ADMIN/main/projects.json"></div>
-<div><label>team.json URL</label><input id="teamUrl" placeholder="https://raw.githubusercontent.com/YOUR-USERNAME/SSA-ADMIN/main/team.json"></div>
-</div>
-<button onclick="saveAndRefresh()">Save URLs & Refresh</button><button class="secondary" onclick="refreshAll()">↻ Refresh</button>
-<div id="status" class="status"></div>
-</section>
+        <section class="card">
+            <h2>GitHub Data Source</h2>
+            <p class="note">This admin reads the latest project and team data from your public SSA-ADMIN GitHub
+                repository. Changes are prepared as Gmail requests; this page does not expose a GitHub write token.</p>
+            <div class="grid">
+                <div><label>projects.json URL</label><input id="projectsUrl"
+                        placeholder="https://miles-morales-rgb.github.io/Ssa-projects-admin/projects.json">
+                </div>
+                <div><label>team.json URL</label><input id="teamUrl"
+                        placeholder="https://miles-morales-rgb.github.io/Ssa-projects-admin/team.json"></div>
+            </div>
+            <button onclick="saveAndRefresh()">Save URLs & Refresh</button><button class="secondary"
+                onclick="refreshAll()">↻ Refresh</button>
+            <div id="status" class="status"></div>
+        </section>
 
-<section class="card">
-<div class="tabs">
-<button class="tab active" onclick="show('projectList')">Projects</button>
-<button class="tab" onclick="show('teamList')">Team Members</button>
-<button class="tab" onclick="show('projectRemove')">Remove Project</button>
-<button class="tab" onclick="show('teamRemove')">Remove Team Member</button>
-</div>
+        <section class="card">
+            <div class="tabs">
+                <button class="tab active" onclick="show('projectList')">Projects</button>
+                <button class="tab" onclick="show('teamList')">Team Members</button>
+                <button class="tab" onclick="show('projectRemove')">Remove Project</button>
+                <button class="tab" onclick="show('teamRemove')">Remove Team Member</button>
+            </div>
 
-<div id="projectList"><h2>Projects from GitHub</h2><div id="projectItems" class="list">Loading…</div></div>
-<div id="teamList" class="hidden"><h2>Team Members from GitHub</h2><div id="teamItems" class="list">Loading…</div></div>
+            <div id="projectList">
+                <h2>Projects from GitHub</h2>
+                <div id="projectItems" class="list">Loading…</div>
+            </div>
+            <div id="teamList" class="hidden">
+                <h2>Team Members from GitHub</h2>
+                <div id="teamItems" class="list">Loading…</div>
+            </div>
 
-<div id="projectAdd" class="hidden">
-<h2>Add Project</h2>
-<div class="grid">
-<div><label>Project Title *</label><input id="pTitle"></div>
-<div><label>Category *</label><select id="pCategory"><option>Hospitality</option><option>Commercial</option></select></div>
-<div><label>Location</label><input id="pLocation"></div>
-<div><label>Display Order</label><input id="pOrder" type="number" value="1"></div>
-</div>
-<label>Short Description</label><textarea id="pShort"></textarea>
-<label>Full Project Description</label><textarea id="pDescription"></textarea>
-<label>Image Path</label><input id="pImage" placeholder="images/projects/project-name.jpg">
-<label class="check"><input id="pFeatured" type="checkbox"> Mark as Featured</label>
-<button onclick="projectAdd()">Send Add Request to Gmail</button><div id="pStatus" class="status"></div>
-</div>
+            <div id="projectAdd" class="hidden">
+                <h2>Add Project</h2>
+                <div class="grid">
+                    <div><label>Project Title *</label><input id="pTitle"></div>
+                    <div><label>Category *</label><select id="pCategory">
+                            <option>Hospitality</option>
+                            <option>Commercial</option>
+                        </select></div>
+                    <div><label>Location</label><input id="pLocation"></div>
+                    <div><label>Display Order</label><input id="pOrder" type="number" value="1"></div>
+                </div>
+                <label>Short Description</label><textarea id="pShort"></textarea>
+                <label>Full Project Description</label><textarea id="pDescription"></textarea>
+                <label>Image Path</label><input id="pImage" placeholder="images/projects/project-name.jpg">
+                <label class="check"><input id="pFeatured" type="checkbox"> Mark as Featured</label>
+                <button onclick="projectAdd()">Send Add Request to Gmail</button>
+                <div id="pStatus" class="status"></div>
+            </div>
 
-<div id="projectRemove" class="hidden">
-<h2>Remove Project</h2>
-<label>Select Existing Project</label><select id="removeProject" onchange="fillProject()"></select>
-<div class="grid"><div><label>Project Title</label><input id="rpTitle"></div><div><label>Location</label><input id="rpLocation"></div></div>
-<label>Reason / Notes</label><textarea id="rpReason"></textarea>
-<button class="danger" onclick="projectRemove()">Send Remove Request to Gmail</button><div id="rpStatus" class="status"></div>
-</div>
+            <div id="projectRemove" class="hidden">
+                <h2>Remove Project</h2>
+                <label>Select Existing Project</label><select id="removeProject" onchange="fillProject()"></select>
+                <div class="grid">
+                    <div><label>Project Title</label><input id="rpTitle"></div>
+                    <div><label>Location</label><input id="rpLocation"></div>
+                </div>
+                <label>Reason / Notes</label><textarea id="rpReason"></textarea>
+                <button class="danger" onclick="projectRemove()">Send Remove Request to Gmail</button>
+                <div id="rpStatus" class="status"></div>
+            </div>
 
-<div id="teamAdd" class="hidden">
-<h2>Add Team Member</h2>
-<div class="grid">
-<div><label>Name *</label><input id="tName"></div>
-<div><label>Role / Designation *</label><input id="tRole"></div>
-<div><label>Display Order</label><input id="tOrder" type="number" value="1"></div>
-<div><label>Image Path</label><input id="tImage" placeholder="images/team/person.jpg"></div>
-</div>
-<label>Quote / Description</label><textarea id="tQuote"></textarea>
-<button class="team" onclick="teamAdd()">Send Add Request to Gmail</button><div id="tStatus" class="status"></div>
-</div>
+            <div id="teamAdd" class="hidden">
+                <h2>Add Team Member</h2>
+                <div class="grid">
+                    <div><label>Name *</label><input id="tName"></div>
+                    <div><label>Role / Designation *</label><input id="tRole"></div>
+                    <div><label>Display Order</label><input id="tOrder" type="number" value="1"></div>
+                    <div><label>Image Path</label><input id="tImage" placeholder="images/team/person.jpg"></div>
+                </div>
+                <label>Quote / Description</label><textarea id="tQuote"></textarea>
+                <button class="team" onclick="teamAdd()">Send Add Request to Gmail</button>
+                <div id="tStatus" class="status"></div>
+            </div>
 
-<div id="teamRemove" class="hidden">
-<h2>Remove Team Member</h2>
-<label>Select Existing Team Member</label><select id="removeTeam" onchange="fillTeam()"></select>
-<div class="grid"><div><label>Name</label><input id="rtName"></div><div><label>Role</label><input id="rtRole"></div></div>
-<label>Reason / Notes</label><textarea id="rtReason"></textarea>
-<button class="danger" onclick="teamRemove()">Send Remove Request to Gmail</button><div id="rtStatus" class="status"></div>
-</div>
-</section>
+            <div id="teamRemove" class="hidden">
+                <h2>Remove Team Member</h2>
+                <label>Select Existing Team Member</label><select id="removeTeam" onchange="fillTeam()"></select>
+                <div class="grid">
+                    <div><label>Name</label><input id="rtName"></div>
+                    <div><label>Role</label><input id="rtRole"></div>
+                </div>
+                <label>Reason / Notes</label><textarea id="rtReason"></textarea>
+                <button class="danger" onclick="teamRemove()">Send Remove Request to Gmail</button>
+                <div id="rtStatus" class="status"></div>
+            </div>
+        </section>
 
-<section class="card"><h2>Workflow</h2><p class="note">Fetch → choose Add/Remove → Gmail request → update JSON/images in GitHub → public website automatically fetches the new data.</p></section>
-</div>
+        <section class="card">
+            <h2>Workflow</h2>
+            <p class="note">Fetch → choose Add/Remove → Gmail request → update JSON/images in GitHub → public website
+                automatically fetches the new data.</p>
+        </section>
+    </div>
 
-<script>
-const ADMIN_EMAIL="info@ssaprojects.com";
-const DEFAULT_PROJECTS="https://raw.githubusercontent.com/YOUR-USERNAME/SSA-ADMIN/main/projects.json";
-const DEFAULT_TEAM="https://raw.githubusercontent.com/YOUR-USERNAME/SSA-ADMIN/main/team.json";
-let projects=[],team=[];
-const $=id=>document.getElementById(id);
-const esc=v=>String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    <script>
+        const ADMIN_EMAIL = "info@ssaprojects.com";
+        const DEFAULT_PROJECTS = "https://miles-morales-rgb.github.io/Ssa-projects-admin/projects.json";
+        const DEFAULT_TEAM = "https://miles-morales-rgb.github.io/Ssa-projects-admin/team.json";
+        let projects = [], team = [];
+        const $ = id => document.getElementById(id);
+        const esc = v => String(v ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
 
-function purl(){return localStorage.getItem("ssa_projects_url")||DEFAULT_PROJECTS}
-function turl(){return localStorage.getItem("ssa_team_url")||DEFAULT_TEAM}
-function saveAndRefresh(){localStorage.setItem("ssa_projects_url",$("projectsUrl").value.trim());localStorage.setItem("ssa_team_url",$("teamUrl").value.trim());refreshAll()}
-async function getJSON(u){const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);const d=await r.json();if(!Array.isArray(d))throw Error("JSON must be an array");return d}
+        function purl() {return localStorage.getItem("ssa_projects_url") || DEFAULT_PROJECTS}
+        function turl() {return localStorage.getItem("ssa_team_url") || DEFAULT_TEAM}
+        function saveAndRefresh() {localStorage.setItem("ssa_projects_url", $("projectsUrl").value.trim()); localStorage.setItem("ssa_team_url", $("teamUrl").value.trim()); refreshAll()}
+        async function getJSON(u) {const r = await fetch(u, {cache: "no-store"}); if (!r.ok) throw Error("HTTP " + r.status); const d = await r.json(); if (!Array.isArray(d)) throw Error("JSON must be an array"); return d}
 
-async function refreshAll(){
-$("status").textContent="Fetching GitHub data…";
-try{
-[projects,team]=await Promise.all([getJSON(purl()),getJSON(turl())]);
-$("projectsUrl").value=purl();$("teamUrl").value=turl();
-render();$("status").textContent=`Loaded ${projects.length} project(s) and ${team.length} team member(s).`;
-}catch(e){$("status").textContent="Could not fetch GitHub data: "+e.message}
-}
+        async function refreshAll() {
+            $("status").textContent = "Fetching GitHub data…";
+            try {
+                [projects, team] = await Promise.all([getJSON(purl()), getJSON(turl())]);
+                $("projectsUrl").value = purl(); $("teamUrl").value = turl();
+                render(); $("status").textContent = `Loaded ${projects.length} project(s) and ${team.length} team member(s).`;
+            } catch (e) {$("status").textContent = "Could not fetch GitHub data: " + e.message}
+        }
 
-function render(){
-$("projectItems").innerHTML=projects.length?projects.map((p,i)=>`<div class="item"><strong>${i+1}. ${esc(p.title)}</strong><div class="meta">${esc(p.category)} · ${esc(p.location)} · Order ${esc(p.displayOrder)}</div></div>`).join(""):'<div class="meta">No projects found.</div>';
-$("teamItems").innerHTML=team.length?team.map((m,i)=>`<div class="item"><strong>${i+1}. ${esc(m.name)}</strong><div class="meta">${esc(m.role)} · Order ${esc(m.displayOrder)}</div></div>`).join(""):'<div class="meta">No team members found.</div>';
-$("removeProject").innerHTML='<option value="">Select project</option>'+projects.map((p,i)=>`<option value="${i}">${esc(p.title)} — ${esc(p.location)}</option>`).join("");
-$("removeTeam").innerHTML='<option value="">Select team member</option>'+team.map((m,i)=>`<option value="${i}">${esc(m.name)} — ${esc(m.role)}</option>`).join("");
-}
+        function render() {
+            $("projectItems").innerHTML = projects.length ? projects.map((p, i) => `<div class="item"><strong>${i + 1}. ${esc(p.title)}</strong><div class="meta">${esc(p.category)} · ${esc(p.location)} · Order ${esc(p.displayOrder)}</div></div>`).join("") : '<div class="meta">No projects found.</div>';
+            $("teamItems").innerHTML = team.length ? team.map((m, i) => `<div class="item"><strong>${i + 1}. ${esc(m.name)}</strong><div class="meta">${esc(m.role)} · Order ${esc(m.displayOrder)}</div></div>`).join("") : '<div class="meta">No team members found.</div>';
+            $("removeProject").innerHTML = '<option value="">Select project</option>' + projects.map((p, i) => `<option value="${i}">${esc(p.title)} — ${esc(p.location)}</option>`).join("");
+            $("removeTeam").innerHTML = '<option value="">Select team member</option>' + team.map((m, i) => `<option value="${i}">${esc(m.name)} — ${esc(m.role)}</option>`).join("");
+        }
 
-function show(id){["projectList","teamList","projectAdd","projectRemove","teamAdd","teamRemove"].forEach(x=>$(x).classList.add("hidden"));$(id).classList.remove("hidden")}
-function fillProject(){let p=projects[+$("removeProject").value];if(!p)return;$("rpTitle").value=p.title||"";$("rpLocation").value=p.location||""}
-function fillTeam(){let m=team[+$("removeTeam").value];if(!m)return;$("rtName").value=m.name||"";$("rtRole").value=m.role||""}
-function mail(subject,body){location.href="mailto:"+ADMIN_EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body)}
+        function show(id) {["projectList", "teamList", "projectAdd", "projectRemove", "teamAdd", "teamRemove"].forEach(x => $(x).classList.add("hidden")); $(id).classList.remove("hidden")}
+        function fillProject() {let p = projects[+$("removeProject").value]; if (!p) return; $("rpTitle").value = p.title || ""; $("rpLocation").value = p.location || ""}
+        function fillTeam() {let m = team[+$("removeTeam").value]; if (!m) return; $("rtName").value = m.name || ""; $("rtRole").value = m.role || ""}
+        function mail(subject, body) {location.href = "mailto:" + ADMIN_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)}
 
-function projectAdd(){
-let d={title:$("pTitle").value.trim(),category:$("pCategory").value,location:$("pLocation").value.trim(),shortDescription:$("pShort").value.trim(),description:$("pDescription").value.trim(),imageUrl:$("pImage").value.trim(),featured:$("pFeatured").checked,displayOrder:+$("pOrder").value||1};
-if(!d.title){$("pStatus").textContent="Project title is required.";return}
-mail("[SSA PROJECTS] Add Project — "+d.title,`SSA PROJECTS — ADD PROJECT REQUEST\n\n${JSON.stringify(d,null,2)}\n\nPlease add this object to projects.json and upload the image to the specified path.`);
-}
-function projectRemove(){
-let title=$("rpTitle").value.trim();if(!title){$("rpStatus").textContent="Select a project.";return}
-mail("[SSA PROJECTS] Remove Project — "+title,`SSA PROJECTS — REMOVE PROJECT REQUEST\n\nProject: ${title}\nLocation: ${$("rpLocation").value.trim()}\n\nReason / Notes:\n${$("rpReason").value.trim()}\n\nPlease remove this project from projects.json.`);
-}
-function teamAdd(){
-let d={name:$("tName").value.trim(),role:$("tRole").value.trim(),imageUrl:$("tImage").value.trim(),quote:$("tQuote").value.trim(),displayOrder:+$("tOrder").value||1};
-if(!d.name||!d.role){$("tStatus").textContent="Name and role are required.";return}
-mail("[SSA PROJECTS] Add Team Member — "+d.name,`SSA PROJECTS — ADD TEAM MEMBER REQUEST\n\n${JSON.stringify(d,null,2)}\n\nPlease add this object to team.json and upload the image to the specified path.`);
-}
-function teamRemove(){
-let name=$("rtName").value.trim();if(!name){$("rtStatus").textContent="Select a team member.";return}
-mail("[SSA PROJECTS] Remove Team Member — "+name,`SSA PROJECTS — REMOVE TEAM MEMBER REQUEST\n\nName: ${name}\nRole: ${$("rtRole").value.trim()}\n\nReason / Notes:\n${$("rtReason").value.trim()}\n\nPlease remove this member from team.json.`);
-}
-window.addEventListener("DOMContentLoaded",()=>{$("projectsUrl").value=purl();$("teamUrl").value=turl();refreshAll()});
-</script>
+        function projectAdd() {
+            let d = {title: $("pTitle").value.trim(), category: $("pCategory").value, location: $("pLocation").value.trim(), shortDescription: $("pShort").value.trim(), description: $("pDescription").value.trim(), imageUrl: $("pImage").value.trim(), featured: $("pFeatured").checked, displayOrder: +$("pOrder").value || 1};
+            if (!d.title) {$("pStatus").textContent = "Project title is required."; return }
+            mail("[SSA PROJECTS] Add Project — " + d.title, `SSA PROJECTS — ADD PROJECT REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to projects.json and upload the image to the specified path.`);
+        }
+        function projectRemove() {
+            let title = $("rpTitle").value.trim(); if (!title) {$("rpStatus").textContent = "Select a project."; return }
+            mail("[SSA PROJECTS] Remove Project — " + title, `SSA PROJECTS — REMOVE PROJECT REQUEST\n\nProject: ${title}\nLocation: ${$("rpLocation").value.trim()}\n\nReason / Notes:\n${$("rpReason").value.trim()}\n\nPlease remove this project from projects.json.`);
+        }
+        function teamAdd() {
+            let d = {name: $("tName").value.trim(), role: $("tRole").value.trim(), imageUrl: $("tImage").value.trim(), quote: $("tQuote").value.trim(), displayOrder: +$("tOrder").value || 1};
+            if (!d.name || !d.role) {$("tStatus").textContent = "Name and role are required."; return }
+            mail("[SSA PROJECTS] Add Team Member — " + d.name, `SSA PROJECTS — ADD TEAM MEMBER REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to team.json and upload the image to the specified path.`);
+        }
+        function teamRemove() {
+            let name = $("rtName").value.trim(); if (!name) {$("rtStatus").textContent = "Select a team member."; return }
+            mail("[SSA PROJECTS] Remove Team Member — " + name, `SSA PROJECTS — REMOVE TEAM MEMBER REQUEST\n\nName: ${name}\nRole: ${$("rtRole").value.trim()}\n\nReason / Notes:\n${$("rtReason").value.trim()}\n\nPlease remove this member from team.json.`);
+        }
+        window.addEventListener("DOMContentLoaded", () => {$("projectsUrl").value = purl(); $("teamUrl").value = turl(); refreshAll()});
+    </script>
 </body>
+
 </html>
