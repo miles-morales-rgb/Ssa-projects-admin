@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,79 +11,246 @@
             box-sizing: border-box
         }
 
+        :root {
+            --bg: #080b10;
+            --panel: rgba(19, 27, 39, .78);
+            --panel2: #111824;
+            --gold: #d4af37;
+            --gold2: #f0d878;
+            --text: #f1f5f9;
+            --muted: #8f9bad;
+            --line: rgba(255, 255, 255, .08);
+            --danger: #d85c5c;
+            --blue: #7180e6;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
         body {
             margin: 0;
-            background: #0d0d0d;
-            color: #eee;
-            font-family: Arial, Helvetica, sans-serif
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 10% 0%, rgba(212, 175, 55, .08), transparent 30%),
+                radial-gradient(circle at 90% 35%, rgba(113, 128, 230, .055), transparent 28%), var(--bg);
+            min-height: 100vh;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: .32;
+            background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: linear-gradient(to bottom, #000, transparent 90%);
+        }
+
+        #progress {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), #fff, var(--gold));
+            z-index: 9999;
+            box-shadow: 0 0 14px rgba(212, 175, 55, .6)
         }
 
         .wrap {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
-            padding: 30px 18px 70px
+            padding: 32px 20px 80px
         }
 
         header {
+            position: sticky;
+            top: 14px;
+            z-index: 20;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap
+            gap: 20px;
+            margin-bottom: 28px;
+            padding: 17px 20px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(8, 11, 16, .76);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .25)
+        }
+
+        header:after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: -1px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: .35
+        }
+
+        .brand small {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: .22em;
+            margin-bottom: 5px
         }
 
         h1 {
             margin: 0;
-            color: #d6b36a;
-            font-size: 30px
+            font-size: 25px;
+            letter-spacing: .02em
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 21px
+        }
+
+        h3 {
+            margin: 0 0 8px
         }
 
         .card {
-            background: #181818;
-            border: 1px solid #303030;
-            border-radius: 14px;
-            padding: 22px;
-            margin-bottom: 18px
+            position: relative;
+            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 18px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 65px rgba(0, 0, 0, .2);
+            transition: .35s ease
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: .65
+        }
+
+        .card:hover {
+            border-color: rgba(212, 175, 55, .16);
+            box-shadow: 0 25px 75px rgba(0, 0, 0, .28)
+        }
+
+        .hero-card {
+            display: grid;
+            grid-template-columns: 1.4fr .6fr;
+            gap: 22px;
+            align-items: center
+        }
+
+        .hero-copy p {
+            max-width: 720px
+        }
+
+        .kicker {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: .22em;
+            font-weight: 700
+        }
+
+        .hero-copy h2 {
+            font-size: 32px;
+            line-height: 1.15;
+            margin: 8px 0 10px
+        }
+
+        .hero-copy h2 span {
+            color: var(--gold)
+        }
+
+        .hero-stat {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .025);
+            text-align: center
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 35px;
+            color: var(--gold);
+            margin-bottom: 5px
+        }
+
+        .hero-stat span {
+            font-size: 12px;
+            color: var(--muted)
         }
 
         button {
-            border: 0;
-            border-radius: 8px;
-            padding: 12px 17px;
+            border: 1px solid rgba(212, 175, 55, .35);
+            border-radius: 10px;
+            padding: 11px 16px;
             font-weight: 700;
             cursor: pointer;
-            background: #d6b36a;
+            background: linear-gradient(135deg, var(--gold2), var(--gold));
             color: #111;
-            margin: 6px 7px 6px 0
+            margin: 5px 6px 5px 0;
+            transition: transform .25s ease, box-shadow .25s ease, filter .25s ease
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, .16);
+            filter: brightness(1.05)
         }
 
         button.secondary {
-            background: #444;
-            color: #fff
+            background: #252d39;
+            color: #fff;
+            border-color: var(--line)
         }
 
         button.danger {
-            background: #9e3333;
-            color: #fff
+            background: #8f3030;
+            color: #fff;
+            border-color: rgba(255, 120, 120, .25)
         }
 
         button.team {
-            background: #6574cd;
-            color: #fff
+            background: linear-gradient(135deg, #818ef1, #5d6dd0);
+            color: #fff;
+            border-color: rgba(129, 142, 241, .3)
         }
 
         input,
         textarea,
         select {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #414141;
-            background: #0d0d0d;
+            padding: 13px 14px;
+            border-radius: 10px;
+            border: 1px solid #303b4b;
+            background: rgba(5, 8, 12, .72);
             color: #fff;
-            margin-top: 6px;
-            margin-bottom: 15px
+            margin-top: 7px;
+            margin-bottom: 16px;
+            outline: none;
+            transition: .25s ease
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: rgba(212, 175, 55, .7);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, .08)
         }
 
         textarea {
@@ -92,8 +260,10 @@
 
         label {
             display: block;
-            color: #bbb;
-            font-size: 14px
+            color: #b9c1cd;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .01em
         }
 
         .grid {
@@ -102,67 +272,87 @@
             gap: 15px
         }
 
-        @media(max-width:700px) {
-            .grid {
-                grid-template-columns: 1fr
-            }
-        }
-
         .hidden {
             display: none !important
         }
 
         .status {
-            color: #d6b36a;
+            color: var(--gold);
             min-height: 22px;
-            margin-top: 10px
+            margin-top: 10px;
+            font-size: 13px
+        }
+
+        .status.error {
+            color: #ff8f8f
+        }
+
+        .status.success {
+            color: #86e2aa
         }
 
         .note {
-            color: #999;
+            color: var(--muted);
             font-size: 13px;
-            line-height: 1.6
+            line-height: 1.65
         }
 
         .list {
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 7px 15px;
             margin-top: 12px;
-            background: #111
+            background: rgba(5, 8, 12, .42)
         }
 
         .item {
-            padding: 11px 0;
-            border-bottom: 1px solid #292929
+            padding: 15px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            transition: .25s ease
         }
 
         .item:last-child {
             border-bottom: 0
         }
 
+        .item:hover {
+            padding-left: 8px;
+            background: rgba(255, 255, 255, .015)
+        }
+
         .meta {
-            color: #999;
-            font-size: 13px;
-            line-height: 1.6
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 4px
         }
 
         .tabs {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 18px
+            margin-bottom: 20px;
+            padding-bottom: 13px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .tab {
+            background: transparent;
+            color: var(--muted);
+            border-color: var(--line);
+            margin: 0
         }
 
         .tab.active {
-            background: #d6b36a;
-            color: #111
+            background: var(--gold);
+            color: #111;
+            border-color: var(--gold)
         }
 
         .check {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
             margin: 8px 0 15px
         }
 
@@ -170,30 +360,169 @@
             width: auto;
             margin: 0
         }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 16px
+        }
+
+        .workflow div {
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, .02)
+        }
+
+        .workflow b {
+            display: block;
+            color: var(--gold);
+            font-size: 11px;
+            margin-bottom: 5px
+        }
+
+        .workflow span {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .mail-choice {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 6px 0 14px
+        }
+
+        .mail-choice button {
+            margin: 0
+        }
+
+        .mail-choice .selected {
+            outline: 2px solid rgba(212, 175, 55, .35)
+        }
+
+        .fade {
+            animation: fade .45s ease both
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(8px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @media(max-width:760px) {
+            .wrap {
+                padding: 18px 12px 60px
+            }
+
+            header {
+                position: relative;
+                top: 0;
+                padding: 15px;
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            header>div:last-child {
+                width: 100%
+            }
+
+            header button {
+                width: 100%;
+                margin: 4px 0
+            }
+
+            .hero-card {
+                grid-template-columns: 1fr
+            }
+
+            .hero-copy h2 {
+                font-size: 27px
+            }
+
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .card {
+                padding: 19px;
+                border-radius: 16px
+            }
+
+            .workflow {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:450px) {
+            .workflow {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation: none !important;
+                transition: none !important
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div id="progress"></div>
     <div class="wrap">
         <header>
-            <h1>SSA PROJECTS — ADMIN</h1>
-            <div><button onclick="show('projectAdd')">+ Add Project</button><button class="team"
-                    onclick="show('teamAdd')">+ Add Team Member</button></div>
+            <div class="brand"><small>SSA PROJECTS</small>
+                <h1>ADMIN CONTROL CENTER</h1>
+            </div>
+            <div>
+                <button onclick="show('projectAdd')">+ Add Project</button>
+                <button class="team" onclick="show('teamAdd')">+ Add Team Member</button>
+            </div>
         </header>
+
+        <section class="card hero-card">
+            <div class="hero-copy">
+                <span class="kicker">CONTENT MANAGEMENT</span>
+                <h2>Manage the website without touching <span>GitHub.</span></h2>
+                <p class="note">Fetch the latest public JSON data, prepare a structured request, and send it to the
+                    administrator for the GitHub update.</p>
+                <div class="action-row">
+                    <button onclick="saveAndRefresh()">Save URLs & Refresh</button>
+                    <button class="secondary" onclick="refreshAll()">↻ Refresh Data</button>
+                </div>
+            </div>
+            <div class="hero-stat"><strong id="totalCount">—</strong><span>Items currently loaded</span></div>
+        </section>
 
         <section class="card">
             <h2>GitHub Data Source</h2>
-            <p class="note">This admin reads the latest project and team data from your public SSA-ADMIN GitHub
-                repository. Changes are prepared as Gmail requests; this page does not expose a GitHub write token.</p>
+            <p class="note">These URLs are read-only public data sources. No GitHub write token is stored in this admin
+                page.</p>
             <div class="grid">
                 <div><label>projects.json URL</label><input id="projectsUrl"
-                        placeholder="https://miles-morales-rgb.github.io/Ssa-projects-admin/projects.json">
-                </div>
+                        placeholder="https://miles-morales-rgb.github.io/Ssa-projects-admin/projects.json"></div>
                 <div><label>team.json URL</label><input id="teamUrl"
                         placeholder="https://miles-morales-rgb.github.io/Ssa-projects-admin/team.json"></div>
             </div>
-            <button onclick="saveAndRefresh()">Save URLs & Refresh</button><button class="secondary"
-                onclick="refreshAll()">↻ Refresh</button>
             <div id="status" class="status"></div>
         </section>
 
@@ -201,8 +530,10 @@
             <div class="tabs">
                 <button class="tab active" onclick="show('projectList')">Projects</button>
                 <button class="tab" onclick="show('teamList')">Team Members</button>
+                <button class="tab" onclick="show('projectAdd')">Add Project</button>
                 <button class="tab" onclick="show('projectRemove')">Remove Project</button>
-                <button class="tab" onclick="show('teamRemove')">Remove Team Member</button>
+                <button class="tab" onclick="show('teamAdd')">Add Team</button>
+                <button class="tab" onclick="show('teamRemove')">Remove Team</button>
             </div>
 
             <div id="projectList">
@@ -229,7 +560,7 @@
                 <label>Full Project Description</label><textarea id="pDescription"></textarea>
                 <label>Image Path</label><input id="pImage" placeholder="images/projects/project-name.jpg">
                 <label class="check"><input id="pFeatured" type="checkbox"> Mark as Featured</label>
-                <button onclick="projectAdd()">Send Add Request to Gmail</button>
+                <button onclick="projectAdd()">Send Add Request</button>
                 <div id="pStatus" class="status"></div>
             </div>
 
@@ -241,7 +572,7 @@
                     <div><label>Location</label><input id="rpLocation"></div>
                 </div>
                 <label>Reason / Notes</label><textarea id="rpReason"></textarea>
-                <button class="danger" onclick="projectRemove()">Send Remove Request to Gmail</button>
+                <button class="danger" onclick="projectRemove()">Send Remove Request</button>
                 <div id="rpStatus" class="status"></div>
             </div>
 
@@ -254,7 +585,7 @@
                     <div><label>Image Path</label><input id="tImage" placeholder="images/team/person.jpg"></div>
                 </div>
                 <label>Quote / Description</label><textarea id="tQuote"></textarea>
-                <button class="team" onclick="teamAdd()">Send Add Request to Gmail</button>
+                <button class="team" onclick="teamAdd()">Send Add Request</button>
                 <div id="tStatus" class="status"></div>
             </div>
 
@@ -266,15 +597,21 @@
                     <div><label>Role</label><input id="rtRole"></div>
                 </div>
                 <label>Reason / Notes</label><textarea id="rtReason"></textarea>
-                <button class="danger" onclick="teamRemove()">Send Remove Request to Gmail</button>
+                <button class="danger" onclick="teamRemove()">Send Remove Request</button>
                 <div id="rtStatus" class="status"></div>
             </div>
         </section>
 
         <section class="card">
-            <h2>Workflow</h2>
-            <p class="note">Fetch → choose Add/Remove → Gmail request → update JSON/images in GitHub → public website
-                automatically fetches the new data.</p>
+            <h2>Request Workflow</h2>
+            <p class="note">The request is opened in Gmail's web compose window. After sending, update the corresponding
+                JSON/images in GitHub. The public website will then fetch the new data.</p>
+            <div class="workflow">
+                <div><b>01 · FETCH</b><span>Read public JSON</span></div>
+                <div><b>02 · PREPARE</b><span>Create structured request</span></div>
+                <div><b>03 · GMAIL</b><span>Open Gmail compose</span></div>
+                <div><b>04 · PUBLISH</b><span>Update GitHub data</span></div>
+            </div>
         </section>
     </div>
 
@@ -285,51 +622,68 @@
         let projects = [], team = [];
         const $ = id => document.getElementById(id);
         const esc = v => String(v ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
-
         function purl() {return localStorage.getItem("ssa_projects_url") || DEFAULT_PROJECTS}
         function turl() {return localStorage.getItem("ssa_team_url") || DEFAULT_TEAM}
         function saveAndRefresh() {localStorage.setItem("ssa_projects_url", $("projectsUrl").value.trim()); localStorage.setItem("ssa_team_url", $("teamUrl").value.trim()); refreshAll()}
         async function getJSON(u) {const r = await fetch(u, {cache: "no-store"}); if (!r.ok) throw Error("HTTP " + r.status); const d = await r.json(); if (!Array.isArray(d)) throw Error("JSON must be an array"); return d}
-
         async function refreshAll() {
-            $("status").textContent = "Fetching GitHub data…";
+            $("status").className = "status"; $("status").textContent = "Fetching GitHub data…";
             try {
                 [projects, team] = await Promise.all([getJSON(purl()), getJSON(turl())]);
-                $("projectsUrl").value = purl(); $("teamUrl").value = turl();
-                render(); $("status").textContent = `Loaded ${projects.length} project(s) and ${team.length} team member(s).`;
-            } catch (e) {$("status").textContent = "Could not fetch GitHub data: " + e.message}
+                $("projectsUrl").value = purl(); $("teamUrl").value = turl(); render();
+                $("status").className = "status success"; $("status").textContent = `Loaded ${projects.length} project(s) and ${team.length} team member(s).`;
+            } catch (e) {$("status").className = "status error"; $("status").textContent = "Could not fetch GitHub data: " + e.message}
         }
-
         function render() {
-            $("projectItems").innerHTML = projects.length ? projects.map((p, i) => `<div class="item"><strong>${i + 1}. ${esc(p.title)}</strong><div class="meta">${esc(p.category)} · ${esc(p.location)} · Order ${esc(p.displayOrder)}</div></div>`).join("") : '<div class="meta">No projects found.</div>';
-            $("teamItems").innerHTML = team.length ? team.map((m, i) => `<div class="item"><strong>${i + 1}. ${esc(m.name)}</strong><div class="meta">${esc(m.role)} · Order ${esc(m.displayOrder)}</div></div>`).join("") : '<div class="meta">No team members found.</div>';
+            $("totalCount").textContent = projects.length + team.length;
+            $("projectItems").innerHTML = projects.length ? projects.map((p, i) => `<div class="item fade"><strong>${i + 1}. ${esc(p.title)}</strong><div class="meta">${esc(p.category)} · ${esc(p.location)} · Order ${esc(p.displayOrder)}</div></div>`).join("") : '<div class="meta">No projects found.</div>';
+            $("teamItems").innerHTML = team.length ? team.map((m, i) => `<div class="item fade"><strong>${i + 1}. ${esc(m.name)}</strong><div class="meta">${esc(m.role)} · Order ${esc(m.displayOrder)}</div></div>`).join("") : '<div class="meta">No team members found.</div>';
             $("removeProject").innerHTML = '<option value="">Select project</option>' + projects.map((p, i) => `<option value="${i}">${esc(p.title)} — ${esc(p.location)}</option>`).join("");
             $("removeTeam").innerHTML = '<option value="">Select team member</option>' + team.map((m, i) => `<option value="${i}">${esc(m.name)} — ${esc(m.role)}</option>`).join("");
         }
-
-        function show(id) {["projectList", "teamList", "projectAdd", "projectRemove", "teamAdd", "teamRemove"].forEach(x => $(x).classList.add("hidden")); $(id).classList.remove("hidden")}
+        function show(id) {
+            ["projectList", "teamList", "projectAdd", "projectRemove", "teamAdd", "teamRemove"].forEach(x => $(x).classList.add("hidden"));
+            $(id).classList.remove("hidden");
+            document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+            const tab = [...document.querySelectorAll(".tab")].find(b => b.getAttribute("onclick")?.includes("'" + id + "'"));
+            if (tab) tab.classList.add("active");
+            window.scrollTo({top: document.querySelector(".card:nth-of-type(3)")?.offsetTop - 20 || 0, behavior: "smooth"});
+        }
         function fillProject() {let p = projects[+$("removeProject").value]; if (!p) return; $("rpTitle").value = p.title || ""; $("rpLocation").value = p.location || ""}
         function fillTeam() {let m = team[+$("removeTeam").value]; if (!m) return; $("rtName").value = m.name || ""; $("rtRole").value = m.role || ""}
-        function mail(subject, body) {location.href = "mailto:" + ADMIN_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)}
 
+        /* Gmail web compose instead of generic mailto.
+           This prevents Windows' default mail handler (often Outlook) from opening. */
+        function gmail(subject, body) {
+            const url = "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=" + encodeURIComponent(ADMIN_EMAIL) + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            window.open(url, "_blank", "noopener");
+        }
         function projectAdd() {
             let d = {title: $("pTitle").value.trim(), category: $("pCategory").value, location: $("pLocation").value.trim(), shortDescription: $("pShort").value.trim(), description: $("pDescription").value.trim(), imageUrl: $("pImage").value.trim(), featured: $("pFeatured").checked, displayOrder: +$("pOrder").value || 1};
             if (!d.title) {$("pStatus").textContent = "Project title is required."; return }
-            mail("[SSA PROJECTS] Add Project — " + d.title, `SSA PROJECTS — ADD PROJECT REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to projects.json and upload the image to the specified path.`);
+            gmail("[SSA PROJECTS] Add Project — " + d.title, `SSA PROJECTS — ADD PROJECT REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to projects.json and upload the image to the specified path.`);
+            $("pStatus").className = "status success"; $("pStatus").textContent = "Gmail compose opened in a new tab.";
         }
         function projectRemove() {
             let title = $("rpTitle").value.trim(); if (!title) {$("rpStatus").textContent = "Select a project."; return }
-            mail("[SSA PROJECTS] Remove Project — " + title, `SSA PROJECTS — REMOVE PROJECT REQUEST\n\nProject: ${title}\nLocation: ${$("rpLocation").value.trim()}\n\nReason / Notes:\n${$("rpReason").value.trim()}\n\nPlease remove this project from projects.json.`);
+            gmail("[SSA PROJECTS] Remove Project — " + title, `SSA PROJECTS — REMOVE PROJECT REQUEST\n\nProject: ${title}\nLocation: ${$("rpLocation").value.trim()}\n\nReason / Notes:\n${$("rpReason").value.trim()}\n\nPlease remove this project from projects.json.`);
+            $("rpStatus").className = "status success"; $("rpStatus").textContent = "Gmail compose opened in a new tab.";
         }
         function teamAdd() {
             let d = {name: $("tName").value.trim(), role: $("tRole").value.trim(), imageUrl: $("tImage").value.trim(), quote: $("tQuote").value.trim(), displayOrder: +$("tOrder").value || 1};
             if (!d.name || !d.role) {$("tStatus").textContent = "Name and role are required."; return }
-            mail("[SSA PROJECTS] Add Team Member — " + d.name, `SSA PROJECTS — ADD TEAM MEMBER REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to team.json and upload the image to the specified path.`);
+            gmail("[SSA PROJECTS] Add Team Member — " + d.name, `SSA PROJECTS — ADD TEAM MEMBER REQUEST\n\n${JSON.stringify(d, null, 2)}\n\nPlease add this object to team.json and upload the image to the specified path.`);
+            $("tStatus").className = "status success"; $("tStatus").textContent = "Gmail compose opened in a new tab.";
         }
         function teamRemove() {
             let name = $("rtName").value.trim(); if (!name) {$("rtStatus").textContent = "Select a team member."; return }
-            mail("[SSA PROJECTS] Remove Team Member — " + name, `SSA PROJECTS — REMOVE TEAM MEMBER REQUEST\n\nName: ${name}\nRole: ${$("rtRole").value.trim()}\n\nReason / Notes:\n${$("rtReason").value.trim()}\n\nPlease remove this member from team.json.`);
+            gmail("[SSA PROJECTS] Remove Team Member — " + name, `SSA PROJECTS — REMOVE TEAM MEMBER REQUEST\n\nName: ${name}\nRole: ${$("rtRole").value.trim()}\n\nReason / Notes:\n${$("rtReason").value.trim()}\n\nPlease remove this member from team.json.`);
+            $("rtStatus").className = "status success"; $("rtStatus").textContent = "Gmail compose opened in a new tab.";
         }
+        window.addEventListener("scroll", () => {
+            const max = document.documentElement.scrollHeight - innerHeight;
+            $("progress").style.width = (max > 0 ? scrollY / max * 100 : 0) + "%";
+        }, {passive: true});
         window.addEventListener("DOMContentLoaded", () => {$("projectsUrl").value = purl(); $("teamUrl").value = turl(); refreshAll()});
     </script>
 </body>
