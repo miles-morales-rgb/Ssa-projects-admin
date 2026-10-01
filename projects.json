@@ -4,7 +4,7 @@
     "category": "Hospitality",
     "location": "Shimla",
     "shortDescription": "Luxury hospitality development engineered to perfection in high-altitude terrain.",
-    "description": "Luxury hospitality development in Shimla.",
+    "description": "Luxury hospitality development in Shimla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "imageUrl": "images/projects/ritz-carlton.jpg",
     "featured": true,
     "displayOrder": 1
@@ -14,7 +14,7 @@
     "category": "Hospitality",
     "location": "Kosi Kalan",
     "shortDescription": "Premium hospitality space with grand architectural detailing and modern structural planning.",
-    "description": "Premium hospitality project in Kosi Kalan.",
+    "description": "Premium hospitality project in Kosi Kalan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "imageUrl": "images/projects/jw-marriott.jpg",
     "featured": true,
     "displayOrder": 2
@@ -24,7 +24,7 @@
     "category": "Commercial",
     "location": "Noida, Uttar Pradesh",
     "shortDescription": "State-of-the-art commercial construction designed for maximum functional efficiency.",
-    "description": "Commercial development in Sector 32.",
+    "description": "Commercial development in Sector 32. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "imageUrl": "images/projects/commercial-sector-32.jpg",
     "featured": false,
     "displayOrder": 3
@@ -34,7 +34,7 @@
     "category": "Hospitality",
     "location": "Udaipur",
     "shortDescription": "Exclusive heritage-inspired luxury architectural installation.",
-    "description": "Udaipur luxury project.",
+    "description": "Udaipur luxury project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "imageUrl": "images/projects/udaipur.jpg",
     "featured": false,
     "displayOrder": 4
@@ -44,7 +44,7 @@
     "category": "Hospitality",
     "location": "Shillong",
     "shortDescription": "Turnkey architectural project integrated into scenic landscape layouts.",
-    "description": "Shillong development project.",
+    "description": "Shillong development project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "imageUrl": "images/projects/shillong.jpg",
     "featured": false,
     "displayOrder": 5
