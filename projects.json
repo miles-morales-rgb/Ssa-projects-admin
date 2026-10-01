@@ -15,7 +15,7 @@
     "location": "Kosi Kalan",
     "shortDescription": "Premium hospitality space with grand architectural detailing and modern structural planning.",
     "description": "Premium hospitality project in Kosi Kalan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "imageUrl": "images/projects/jw-marriott.jpg",
+    "imageUrl": "images/projects/jw-marriott.png",
     "featured": true,
     "displayOrder": 2
   },
@@ -35,7 +35,7 @@
     "location": "Udaipur",
     "shortDescription": "Exclusive heritage-inspired luxury architectural installation.",
     "description": "Udaipur luxury project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "imageUrl": "images/projects/udaipur.jpg",
+    "imageUrl": "images/projects/udaipur.png",
     "featured": false,
     "displayOrder": 4
   },
@@ -45,7 +45,7 @@
     "location": "Shillong",
     "shortDescription": "Turnkey architectural project integrated into scenic landscape layouts.",
     "description": "Shillong development project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "imageUrl": "images/projects/shillong.jpg",
+    "imageUrl": "images/projects/Shillong.jpg",
     "featured": false,
     "displayOrder": 5
   }
