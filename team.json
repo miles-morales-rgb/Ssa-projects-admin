@@ -1,57 +1,57 @@
 [
   {
-    "name": "Ashok Jha",
+    "name": "Ashok",
     "role": "Founder & CEO",
-    "imageUrl": "images/team/ashok-jha.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Leading with vision, building with purpose, and growing with the people who make it happen. I believe in strong teams, clear direction, and delivering work that speaks for itself.",
     "displayOrder": 1
   },
   {
-    "name": "Subodh Jha",
+    "name": "Subodh",
     "role": "Operations Lead",
-    "imageUrl": "images/team/subodh-jha.jpg",
+    "imageUrl": "images/team/Subodh Sir.png",
     "quote": "Keeping the operations moving, the teams aligned, and the work on track. I focus on turning plans into smooth execution while keeping the energy right.",
     "displayOrder": 2
   },
   {
-    "name": "Anand Jha",
+    "name": "Anand",
     "role": "Tender Manager",
-    "imageUrl": "images/team/anand-jha.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Turning opportunities into well-planned proposals. I handle the tendering process with attention to detail, strategic thinking, and a clear focus on winning the right work.",
     "displayOrder": 3
   },
   {
-    "name": "Vinod Sir",
+    "name": "Vinod",
     "role": "Finance Manager",
-    "imageUrl": "images/team/vinod-sir.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Keeping the numbers clear, the finances organized, and the business moving in the right direction. Good decisions start with a strong financial foundation.",
     "displayOrder": 4
   },
   {
-    "name": "Bhuwan Sir",
+    "name": "Bhuwan",
     "role": "Accountant",
-    "imageUrl": "images/team/bhuwan-sir.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Keeping the accounts accurate, organized, and always up to date. Behind every smooth operation is someone making sure the numbers add up.",
     "displayOrder": 5
   },
   {
-    "name": "Bharosh Jha",
+    "name": "Bharosha",
     "role": "Operations Lead",
-    "imageUrl": "images/team/bharosh-jha.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Bringing people, processes, and projects together to keep things moving. I believe great operations are all about coordination, consistency, and getting things done.",
     "displayOrder": 6
   },
   {
-    "name": "Vijay Sir",
+    "name": "Vijay",
     "role": "Project Head",
-    "imageUrl": "images/team/vijay-sir.jpg",
+    "imageUrl": "images/team/logo.jpeg",
     "quote": "Turning plans into progress. I oversee projects from coordination to execution, keeping teams focused, timelines moving, and the final result on point.",
     "displayOrder": 7
   },
   {
     "name": "Raj Mohan",
     "role": "Design Engineer",
-    "imageUrl": "images/team/raj-mohan.jpg",
+    "imageUrl": "images/team/Raj Mohan.png",
     "quote": "I design with purpose, coordinate with precision, and care about the details. Great work needs great energy — so I bring the ideas, the vibe, and the drive to get things done right. ✌️",
     "displayOrder": 8
   },
